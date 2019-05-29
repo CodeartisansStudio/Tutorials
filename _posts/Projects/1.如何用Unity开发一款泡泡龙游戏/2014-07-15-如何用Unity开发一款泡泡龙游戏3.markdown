@@ -1,0 +1,6 @@
+---
+layout: post
+category: Projects
+chapter: Puzzle Bobble
+author: Kevin Qin
+---

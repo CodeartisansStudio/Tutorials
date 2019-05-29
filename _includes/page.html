@@ -1,0 +1,44 @@
+ <!-- Page Section -->
+    <section class="success">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>{{ page.category }}</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <p>{{ page.description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+	{% for content in page.contents %}
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h1>{{ content.chapter }}</h1>
+						<hr class="star-primary">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<p>{{ content.introduction }}</p>
+						<ul>
+							{% assign posts = site.categories.[page.category] | sort %}
+							{% for post in posts %}
+								{% if post.chapter == content.chapter %}
+									<li>
+										<p><a href="{{ post.url }}">{{ post.title }}</a></p>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endfor %}
+    

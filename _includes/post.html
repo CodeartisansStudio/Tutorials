@@ -1,0 +1,24 @@
+ <!-- Post Section -->
+    <section class="success">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h1>{{ page.title }}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <p>{% if page.author %}{{ page.author }} on {% endif %}{{ page.date | date: "%b %-d, %Y" }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                	{{ content }}
+                </div>
+            </div>
+        </div>
+    </section>
